@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('Designer.jpeg') no-repeat center top;
+    background-size: cover;
+
+}
+
+.login-container {
+    position: fixed;
+    top: 59.5%;
+    left: 52.5%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+.register-container {
+    position: fixed;
+    top: 59.5%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+input[type="text"],
+input[type="password"] {
+    display: block;
+    width: 230px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-radius: 0.7em;
+    border: 1.5px solid black;
+}
+
+button {
+    cursor: pointer;
+    display: block;
+    width: 250px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-radius: 0.7em;
+    border: 1.5px solid black;
+    transition: background-color 0.3s;
+}
+
+
+button:hover {
+    background-color: rgb(31, 228, 31);
+    color: azure;
+
+}
+    .register-text,
+    .login-text {
+        color: yellow;
+    }
+
+    .register-text a,
+    .login-text a {
+        text-decoration: underline;
+        color: yellow;
+    }
