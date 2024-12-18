@@ -1,65 +1,188 @@
 body {
-    margin: 0;
-    padding: 0;
-    background: url('Designer.jpeg') no-repeat center top;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    user-select: none;
+}
+
+#gameContainer, #startContainer {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 600px;
+}
+
+
+#startScreen {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    background: url('background.jpg') no-repeat center center;
     background-size: cover;
-
+    border: 2px solid #000;
+    overflow: hidden;
 }
 
-.login-container {
-    position: fixed;
-    top: 59.5%;
-    left: 52.5%;
-    transform: translate(-50%, -50%);
+.fancyButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
     text-align: center;
-
-}
-
-.register-container {
-    position: fixed;
-    top: 59.5%;
-    left: 52%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-
-input[type="text"],
-input[type="password"] {
-    display: block;
-    width: 230px;
-    padding: 10px;
-    margin-bottom: 10px;
+    text-decoration: none;
+    display: inline-block;
     font-size: 16px;
-    border-radius: 0.7em;
-    border: 1.5px solid black;
-}
-
-button {
+    margin: 4px 2px;
     cursor: pointer;
-    display: block;
-    width: 250px;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
-    border-radius: 0.7em;
-    border: 1.5px solid black;
-    transition: background-color 0.3s;
+    border-radius: 12px;
+    box-shadow: 0 4px #999;
 }
 
-
-button:hover {
-    background-color: rgb(31, 228, 31);
-    color: azure;
-
+.fancyButton:hover {
+    background-color: #45a049;
 }
-    .register-text,
-    .login-text {
-        color: yellow;
-    }
 
-    .register-text a,
-    .login-text a {
-        text-decoration: underline;
-        color: yellow;
+.fancyButton:active {
+    background-color: #45a049;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+.hidden {
+    display: none;
+}
+
+#gameArea {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: url('background.jpg') no-repeat center center;
+    background-size: cover;
+    border: 2px solid #000;
+    overflow: hidden;
+    cursor: url('knife.png'), auto;
+    user-select: none;
+}
+
+.fruit {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: url('knife2.png'), auto;
+    transform-origin: center;
+    animation: rotate 2s linear infinite;
+    z-index: 1;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
     }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.flash {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+#scoreDisplay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-family: 'Verdana', sans-serif;
+    user-select: none;
+    z-index: 5;
+}
+
+#livesContainer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+}
+
+.life {
+    width: 20px;
+    height: 20px;
+    user-select: none;
+}
+
+#gameOver {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-family: 'Brush Script MT', cursive;
+    display: none;
+    z-index: 10;
+}
+
+#retryButton {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    display: none;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+}
+
+#highScoreDisplay {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-family: 'Verdana', sans-serif;
+    display: none;
+    z-index: 10;
+}
+
+#backButton {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#backButton:hover {
+    background-color: #0b7dda;
+}
